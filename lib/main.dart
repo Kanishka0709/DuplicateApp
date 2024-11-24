@@ -74,53 +74,56 @@ class _SplashScreenState extends State<SplashScreen>
     super.dispose();
   }
 
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      body: Container(
-        color: const Color.fromARGB(255, 255, 255, 255),
-        child: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              ScaleTransition(
-                scale: _animation,
-                child: const Text(
-                  'PRAVAAH',
-                  style: TextStyle(
-                    color: Color.fromARGB(255, 0, 20, 199),
-                    fontSize: 36,
-                    fontWeight: FontWeight.bold,
-                    fontFamily: 'CourierPrime',
-                  ),
-                ),
+ @override
+Widget build(BuildContext context) {
+  return Scaffold(
+    body: Container(
+      color: const Color.fromARGB(255, 255, 255, 255),
+      child: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            // Logo with scaling animation
+            ScaleTransition(
+              scale: _animation,
+              child: Image.asset(
+                'assets/logo.jpg',  // Path to your logo
+                width: 300,  // Adjust the size of the logo as needed
+                height: 300, // Adjust the size of the logo as needed
               ),
-              const SizedBox(height: 10),
-              const Text(
-                'Welcome to Railway Navigator',
+            ),
+            const SizedBox(height: 20),
+            // Text with scaling animation
+            ScaleTransition(
+              scale: _animation,
+              child: const Text(
+                'PRAVAAH',
                 style: TextStyle(
                   color: Color.fromARGB(255, 0, 20, 199),
-                  fontSize: 24,
+                  fontSize: 36,
                   fontWeight: FontWeight.bold,
-                  fontFamily: 'CourierPrime',
+                  fontFamily: 'Raleway',
                 ),
               ),
-              const SizedBox(height: 30),
-              const CircularProgressIndicator(
-                color: Color.fromARGB(255, 70, 3, 255),
+            ),
+            const SizedBox(height: 10),
+            const Text(
+              '',
+              style: TextStyle(
+                color: Color.fromARGB(255, 0, 20, 199),
+                fontSize: 24,
+                fontWeight: FontWeight.bold,
+                fontFamily: 'CourierPrime',
               ),
-            ],
-          ),
+            ),
+            const SizedBox(height: 30),
+            const CircularProgressIndicator(
+              color: Color.fromARGB(255, 70, 3, 255),
+            ),
+          ],
         ),
       ),
-    );
-  }
+    ),
+  );
 }
-
-// Main Page with Navigation Bar
-
-// Add the rest of your pages such as ChatbotPage, EmergencyContactsPage, EmergencyEmailsPage,
-// WelcomePage, SearchPage, ProfilePage, LoginPage, and SignUpPage below.
-
-
-
+    }
