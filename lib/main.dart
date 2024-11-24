@@ -78,13 +78,7 @@ class _SplashScreenState extends State<SplashScreen>
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        decoration: const BoxDecoration(
-          image: DecorationImage(
-            image: AssetImage(
-                'assets/welcome_background.jpg'), // Add your image path here
-            fit: BoxFit.cover, // Ensures the image covers the entire screen
-          ),
-        ),
+        color: const Color.fromARGB(255, 255, 255, 255),
         child: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,

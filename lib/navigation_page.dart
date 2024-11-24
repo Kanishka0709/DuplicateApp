@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'dart:io';
 import 'package:google_generative_ai/google_generative_ai.dart';
 import 'welcome_page.dart';
@@ -145,8 +146,8 @@ class _ChatbotPageState extends State<ChatbotPage> {
     super.initState();
 
     // Initialize the chatbot model
-    final apiKey = 'AIzaSyAKPFifIPM1ZFWgC7UBzEkm4npQNSXiW3c';
-    if (apiKey.isEmpty) {
+    final apiKey = dotenv.env['GEMINI_API_KEY'];
+    if (apiKey!.isEmpty) {
       stderr.writeln('No API key found in the .env file.');
       exit(1);
     }
